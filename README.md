@@ -52,8 +52,7 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
    10. Test your uWSGI Server configuration by providing an available socket and specifying a protocol:
       
    **NOTE: Before testing this command, open port 8000 on your Security Group in AWS. Without that port open, this will not work. You can close it after you test.**
-     
-       >  uwsgi --socket 0.0.0.0:8000 --protocol=http -w wsgi
+     >  uwsgi --socket 0.0.0.0:8000 --protocol=http -w wsgi
     
    
    
