@@ -24,6 +24,6 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
 
    1.	Install pip, python-devel, gcc and nginx packages with the following command:
 
-      	  sudo yum install python-pip python-devel gcc nginx
+      	>  sudo yum install python-pip python-devel gcc nginx
 
    2.	Create a Python Virtual Environment to isolate your Flask application from other Python files. Run the following command    to 
