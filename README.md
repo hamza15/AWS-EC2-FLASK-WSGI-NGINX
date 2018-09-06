@@ -88,7 +88,8 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
        >  unix:/home/ec2-user/app-flask/flask.sock failed (2: No such file or directory) while connecting to upstream
        
    In the above case run the uWSGI config file to start your WSGI application server, so a socket file is created in your app-    flask directory:
-       >  uwsgi --ini wsgi.ini
+       
+       uwsgi --ini wsgi.ini
        
    20. Navigate to your Elastic-IP with your web broswer and you should see it is up and running now! Your Flask application is now running with WSGI conifgured as an application server and NGINX as a web server.     
        
