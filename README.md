@@ -20,3 +20,10 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
    7.	Upon launch, associate your Elastic IP to your EC2 Instance.
    8.	SSH to your EC2 instance and we should be ready for your application setup.
 
+### Flask Configuration Steps:
+
+   1.	Install pip, python-devel, gcc and nginx packages with the following command:
+
+   >	Sudo yum install python-pip python-devel gcc nginx
+
+   2.	Create a Python Virtual Environment to isolate your Flask application from other Python files. Run the following command    to 
