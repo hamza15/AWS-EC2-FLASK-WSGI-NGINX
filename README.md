@@ -60,7 +60,11 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
    
        **We don't specify a protocol in this config file because by NGINX speaks the binary protocol natively. WSGI uses the binary protocol byd default.**
    
-   13. 
+   13. It's important to setup your Flask application to be automatically started at server boot. This provides an **Always-on** attribute, which coupled with other infrastructural changes, like Load Balancing and Auto-scaling can create a full production workload for your application. To get started navigate to /etc/systemd/system/ directory and create a file called app-flask.service inside. Copy the app-flask.service file from this repo.
+   
+       **If you are using a user other than ec2-user, change the username accordingly.**
+       
+   14.     
     
    
    
