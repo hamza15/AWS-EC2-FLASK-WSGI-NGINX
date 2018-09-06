@@ -33,3 +33,16 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
        >  mkdir ~/app-flask
        >  cd ~/app-flask
        
+   4. Create a virtual enviornment inside your Flask application and active it:
+       >  virtualenv app-flask
+       >  source virtualenv/bin/activate
+       
+   5. Install flask and uwsgi:
+       >  pip install uwsgi flask
+       
+   6. Create a sample app with Flask. Create a file in your directory called hello.py and copy the hello.py file provided in this repo.
+   
+   7. Execute the file with python:
+       > python hello.py
+       
+   8. Open a web browser and naviagte to your Elastic Ip Address. **You should see "Hello there!"**    
