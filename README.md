@@ -49,6 +49,8 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
    
    9. Next, create a WSGI entry point so your uWSGI application server can interact with your application. Call this file wsgi.py and copy the wsgi.py file from this repo. 
    
+      **NOTE: Before testing uWSGI Server configuration, open port 8000 on your Security Group in AWS. Without that port open, this will not work. You can close it after you test.**
+   
    10. Test your uWSGI Server configuration by providing an available socket and specifying a protocol:
        >  uwsgi --socket 0.0.0.0:8000 --protocol=http -w wsgi
     
