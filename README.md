@@ -53,6 +53,14 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
    
    10. Test your uWSGI Server configuration by providing an available socket and specifying a protocol:
        >  uwsgi --socket 0.0.0.0:8000 --protocol=http -w wsgi
+       
+   11. We can deactivate the virtual environment since the rest of the commands are not specific to this project.
+   
+   12. Create a uWSGI Configuration file for a prod-ready environment. Copy the wsgi.ini file from this repo and place it in your project directory. 
+   
+       **We don't specify a protocol in this config file because by NGINX speaks the binary protocol natively. WSGI uses the binary protocol byd default.**
+   
+   13. 
     
    
    
