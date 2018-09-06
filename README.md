@@ -26,4 +26,9 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
 
       	>  sudo yum install python-pip python-devel gcc nginx
 
-   2.	Create a Python Virtual Environment to isolate your Flask application from other Python files. Run the following command    to 
+   2.	Create a Python Virtual Environment to isolate your Flask application from other Python files. Run the following command:
+       >  sudo pip install virtualenv
+   3. Make a directory and change to it:
+       >  mkdir ~/app-flask
+       >  cd ~/app-flask
+       
