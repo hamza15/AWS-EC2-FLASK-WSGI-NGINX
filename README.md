@@ -84,6 +84,7 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
        >  sudo systemctl enable nginx
        
    19. Although at this point you can navigate to the your Elastic IP on a web browser and should see it load up, however in some cases you may see 502 bad gateway message from NGINX. Navigate to the /var/log/nginx/error.log and check for errors. If you see:
+   
        >  unix:/home/ec2-user/app-flask/flask.sock failed (2: No such file or directory) while connecting to upstream
        
    In the above case run the uWSGI config file to start your WSGI application server, so a socket file is created in your app-flask directory:
