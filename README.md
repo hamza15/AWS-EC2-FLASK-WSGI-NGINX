@@ -11,12 +11,12 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
 
 ### AWS steps:
 
-1.	Create an AWS VPC.
-2.	Launch a subnet and create an Internet Gateway (IGW) for your subnet.
-3.	After your public subnet is ready, add a route table entry from 0.0.0.0/0 to IGW.
-4.	Create an Elastic-IP and hold on to it.
-5.	Launch an Amazon Linux EC2 Instance in your public subnet (t2-micro – You can always upgrade your AMI once you are done with this guide).
-6.	Create a Security Group with port 80 for HTTP traffic open to 0.0.0.0/0 and port 22 for SSH open to your IP.
-7.	Upon launch, associate your Elastic IP to your EC2 Instance.
-8.	SSH to your EC2 instance and we should be ready for your application setup.
+   1.	Create an AWS VPC.
+   2.	Launch a subnet and create an Internet Gateway (IGW) for your subnet.
+   3.	After your public subnet is ready, add a route table entry from 0.0.0.0/0 to IGW.
+   4.	Create an Elastic-IP and hold on to it.
+   5.	Launch an Amazon Linux EC2 Instance in your public subnet (t2-micro – You can always upgrade your AMI once you are done       with this guide).
+   6.	Create a Security Group with port 80 for HTTP traffic open to 0.0.0.0/0 and port 22 for SSH open to your IP.
+   7.	Upon launch, associate your Elastic IP to your EC2 Instance.
+   8.	SSH to your EC2 instance and we should be ready for your application setup.
 
