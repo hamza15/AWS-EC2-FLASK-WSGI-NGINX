@@ -64,7 +64,33 @@ This document covers deploying a basic flask application on an AWS EC2 instance 
    
        **If you are using a user other than ec2-user, change the username accordingly.**
        
-   14.     
+   14. Start the uWSGI service and enable it so your application starts at boot.
+       >  sudo systemctl start app-flask
+       >  sudo systemctl enable app-flask
+       
+   15. Configure NGINX to pass requests to the socket uWSGI is configured at. This can be done by updating the nginx.conf file. Add a **server block** right above the server block already configured and copy the nginx.conf file server block to your project nginx.conf file. Make sure to keep the rest of the file as default.
+   
+   **NOTE: UPDATE THE 'SERVER NAME' by replacing the Elastic-IP address with your AWS Elastic-IP.**
+   
+   16. For nginx to have access to your application, add nginx to the ec2-user group so it can access the socket file. Also change permissions on teh home directory:
+       >  sudo usermod -a -G ec2-user nginx
+       >  chmod 710 /home/ec2-user
+       
+   17. Test your nginx conifguration for syntax errors with the following command:
+       >  sudo nginx -t
+       
+   18. If the syntax passes, start and enable Nginx so it can start at boot:
+       >  sudo systemctl start nginx
+       >  sudo systemctl enable nginx
+       
+   19. Although at this point you can navigate to the your Elastic IP on a web browser and should see it load up, however in some cases you may see 502 bad gateway message from NGINX. Navigate to the /var/log/nginx/error.log and check for errors. If you see:
+       >  unix:/home/ec2-user/app-flask/flask.sock failed (2: No such file or directory) while connecting to upstream
+       
+   In the above case run the uWSGI config file to start your WSGI application server, so a socket file is created in your app-flask directory:
+       >  uwsgi --ini wsgi.ini
+       
+   20. Navigate to your Elastic-IP with your web broswer and you should see it is up and running now! Your Flask application is now running with WSGI conifgured as an application server and NGINX as a web server.     
+       
     
    
    
